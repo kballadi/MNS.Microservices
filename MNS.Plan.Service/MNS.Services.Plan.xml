@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MNS.Services.MobilePlan.Api</name>
+    </assembly>
+    <members>
+        <member name="T:MNS.Services.MobilePlan.AutoMapperProfile">
+            <summary>
+            Automapper Profile
+            </summary>
+        </member>
+        <member name="M:MNS.Services.MobilePlan.AutoMapperProfile.#ctor">
+            <summary>
+            Ctor Auto mapper
+            </summary>
+        </member>
+        <member name="T:MNS.Services.MobilePlan.Dtos.MobilePlanCreateDto">
+            <summary>
+            Mobile Plan Dto
+            </summary>
+        </member>
+        <member name="T:MNS.Services.MobilePlan.Dtos.MobilePlanReadDto">
+            <summary>
+            Mobile Plan Dto contract
+            </summary>
+        </member>
+        <member name="T:MNS.Services.MobilePlan.Dtos.MobilePlanUpdateDto">
+            <summary>
+            Mobile Plan Update Dto contract
+            </summary>
+        </member>
+        <member name="T:MNS.Services.MobilePlan.Middlewares.ExceptionHandlingMiddlerWare">
+            <summary>
+            Exception Handling Middleware
+            </summary>
+        </member>
+        <member name="M:MNS.Services.MobilePlan.Middlewares.ExceptionHandlingMiddlerWare.#ctor(Microsoft.Extensions.Logging.ILogger{MNS.Services.MobilePlan.Middlewares.ExceptionHandlingMiddlerWare})">
+            <summary>
+            Constructor of Middleware
+            </summary>
+            <param name="logger">Logger to log details</param>
+        </member>
+        <member name="M:MNS.Services.MobilePlan.Middlewares.ExceptionHandlingMiddlerWare.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Interface method to Invoke the RequestDelegate for HttpPipeline.
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MNS.Services.MobilePlan.Startup">
+            <summary>
+            Entry class to configure the required pipeline to run the services.
+            </summary>
+        </member>
+        <member name="M:MNS.Services.MobilePlan.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Ctor of Startup class
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MNS.Services.MobilePlan.Startup.Configuration">
+            <summary>
+            Config Property
+            </summary>
+        </member>
+        <member name="M:MNS.Services.MobilePlan.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MNS.Services.MobilePlan.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:MNS.MobilePlan.Service.Controllers.MobilePlansController">
+            <summary>
+            Mobile Plans Service
+            </summary>
+        </member>
+        <member name="M:MNS.MobilePlan.Service.Controllers.MobilePlansController.#ctor(Microsoft.Extensions.Logging.ILogger{MNS.MobilePlan.Service.Controllers.MobilePlansController},AutoMapper.IMapper,MNS.Services.MobilePlan.Infrastructure.Repos.IMobilePlanRepository)">
+            <summary>
+            Mobile Plan Ctor
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="mobilePlanRepository"></param>
+        </member>
+        <member name="M:MNS.MobilePlan.Service.Controllers.MobilePlansController.GetMobilePlans">
+            <summary>
+            Get the Mobile plans from the system
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MNS.MobilePlan.Service.Controllers.MobilePlansController.GetMobilePlanById(System.Int32)">
+            <summary>
+            Get the mobile plan by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MNS.MobilePlan.Service.Controllers.MobilePlansController.AddMobilePlans(MNS.Services.MobilePlan.Dtos.MobilePlanCreateDto)">
+            <summary>
+            Add mobile plan to the system
+            </summary>
+            <param name="mobilePlanCreateDto"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

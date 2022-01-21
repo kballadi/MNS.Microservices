@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MNS.Services.Utilization.Api</name>
+    </assembly>
+    <members>
+        <member name="T:MNS.Utilization.Service.Api.AutoMapperProfile">
+            <summary>
+            Auto mapper profile
+            </summary>
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.AutoMapperProfile.#ctor">
+            <summary>
+            Ctor mapper
+            </summary>
+        </member>
+        <member name="T:MNS.Utilization.Service.Api.Controllers.UtilizationsController">
+            <summary>
+            Consumption Service
+            </summary>
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.Controllers.UtilizationsController.#ctor(Microsoft.Extensions.Logging.ILogger{MNS.Utilization.Service.Api.Controllers.UtilizationsController},AutoMapper.IMapper,MNS.Services.Utilization.Infrastructure.Repos.IUtilizationRepository)">
+            <summary>
+            Consumption Ctor
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="utilizationRepo"></param>
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.Controllers.UtilizationsController.GetCustomerConsumptionById(System.Int32)">
+            <summary>
+            Get the registered custome by Id
+            </summary>
+            <param name="customerId"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.Controllers.UtilizationsController.AddBilling(MNS.Utilization.Service.Api.Dtos.UtilizationCreateDto)">
+            <summary>
+            Add billing to the customers
+            </summary>
+            <param name="utilizationCreateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MNS.Utilization.Service.Api.Middlewares.ExceptionHandlingMiddlerWare">
+            <summary>
+            Exception Middleware
+            </summary>
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.Middlewares.ExceptionHandlingMiddlerWare.#ctor(Microsoft.Extensions.Logging.ILogger{MNS.Utilization.Service.Api.Middlewares.ExceptionHandlingMiddlerWare})">
+            <summary>
+            Constructor of Middleware
+            </summary>
+            <param name="logger">Logger to log details</param>
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.Middlewares.ExceptionHandlingMiddlerWare.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Interface method to Invoke the RequestDelegate for HttpPipeline.
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MNS.Utilization.Service.Api.Startup">
+            <summary>
+            Startup class required to configure the respective pipeline to run the services.
+            </summary>
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Ctor for Startup class
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MNS.Utilization.Service.Api.Startup.Configuration">
+            <summary>
+            Config Property
+            </summary>
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MNS.Utilization.Service.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

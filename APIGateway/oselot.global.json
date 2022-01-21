@@ -1,0 +1,81 @@
+{
+  "ReRoutes": [
+    //Gateway for Customer API
+    {
+      "DownstreamPathTemplate": "/api/customers",
+      "DownstreamScheme": "http",
+      "DownsteamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "33526"
+        }
+      ],
+      "UpstreamPathTemplate": "/customers",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/customers/{id}",
+      "DownstreamScheme": "http",
+      "DownsteamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "33526"
+        }
+      ],
+      "UpstreamPathTemplate": "/customers/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    //Gateway for MobilePlan API
+    {
+      "DownstreamPathTemplate": "/api/mobileplans",
+      "DownstreamScheme": "http",
+      "DownsteamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "3099"
+        }
+      ],
+      "UpstreamPathTemplate": "/plans",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/mobileplans/{id}",
+      "DownstreamScheme": "http",
+      "DownsteamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "3099"
+        }
+      ],
+      "UpstreamPathTemplate": "/plans/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    //Gateway for Utilization API
+    {
+      "DownstreamPathTemplate": "/api/utilizations",
+      "DownstreamScheme": "http",
+      "DownsteamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "45244"
+        }
+      ],
+      "UpstreamPathTemplate": "/consumptions",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/utilizations/{id}",
+      "DownstreamScheme": "http",
+      "DownsteamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "45244"
+        }
+      ],
+      "UpstreamPathTemplate": "/consumptions/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ]
+}

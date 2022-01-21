@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MNS.Services.Customer.Api</name>
+    </assembly>
+    <members>
+        <member name="T:MNS.Services.Customer.AutoMapperProfile">
+            <summary>
+            Auto mapper profile
+            </summary>
+        </member>
+        <member name="M:MNS.Services.Customer.AutoMapperProfile.#ctor">
+            <summary>
+            Ctor mapper
+            </summary>
+        </member>
+        <member name="T:MNS.Services.Customer.Dtos.CustomerCreateDto">
+            <summary>
+            Created Dto for Customer
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerCreateDto.Name">
+            <summary>
+            Customer Name 
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerCreateDto.EmailId">
+            <summary>
+            Customer Email Id
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerCreateDto.Plan_Id">
+            <summary>
+            Mobile Plan Id
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerCreateDto.IsVerified">
+            <summary>
+            Whether customer is verified or not
+            </summary>
+        </member>
+        <member name="T:MNS.Services.Customer.Dtos.CustomerReadDto">
+            <summary>
+            Customer Read Dto
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerReadDto.Customer_Id">
+            <summary>
+            Customer Id
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerReadDto.Name">
+            <summary>
+            Customer Name
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerReadDto.EmailId">
+            <summary>
+            Customer Email Id
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerReadDto.Plan_Id">
+            <summary>
+            Mobile Plan Id
+            </summary>
+        </member>
+        <member name="P:MNS.Services.Customer.Dtos.CustomerReadDto.IsVerified">
+            <summary>
+            Is Verified
+            </summary>
+        </member>
+        <member name="T:MNS.Services.Customer.Api.Messaging.CustomerRegisteredMessage">
+            <summary>
+            Customer Registered Message
+            </summary>
+        </member>
+        <member name="T:MNS.Services.Customer.Api.Messaging.MobilePlanBoughtMessage">
+            <summary>
+            Mobile Plan Buying message
+            </summary>
+        </member>
+        <member name="M:MNS.Services.Customer.Middlewares.ExceptionHandlingMiddlerWare.#ctor(Microsoft.Extensions.Logging.ILogger{MNS.Services.Customer.Middlewares.ExceptionHandlingMiddlerWare})">
+            <summary>
+            Constructor of Middleware
+            </summary>
+            <param name="logger">Logger to log details</param>
+        </member>
+        <member name="M:MNS.Services.Customer.Middlewares.ExceptionHandlingMiddlerWare.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Interface method to Invoke the RequestDelegate for HttpPipeline.
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MNS.Customer.Service.Controllers.CustomersController">
+            <summary>
+            Customer API Controller
+            </summary>
+        </member>
+        <member name="M:MNS.Customer.Service.Controllers.CustomersController.#ctor(Microsoft.Extensions.Logging.ILogger{MNS.Customer.Service.Controllers.CustomersController},AutoMapper.IMapper,MNS.Services.Customer.Infrastructure.Repos.ICustomerRepository,MNS.Integration.MessageBus.IMessageBus)">
+            <summary>
+            Constructor of Customer API Controller
+            </summary>
+            <param name="logger">Logger to Log</param>
+            <param name="mapper">Automapper</param>
+            <param name="customerRepository">Customer Repository</param>
+        </member>
+        <member name="M:MNS.Customer.Service.Controllers.CustomersController.GetCustomers">
+            <summary>
+            Get the list of customers 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MNS.Customer.Service.Controllers.CustomersController.GetCustomerByEmailId(System.String)">
+            <summary>
+            Get the customer details 
+            </summary>
+            <param name="emailId">Registered Email Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MNS.Customer.Service.Controllers.CustomersController.AddCustomer(MNS.Services.Customer.Dtos.CustomerCreateDto)">
+            <summary>
+            Registering Customer 
+            </summary>
+            <param name="customerCreateDto">DTO object of Customer</param>
+            <returns>Customer</returns>
+        </member>
+        <member name="M:MNS.Customer.Service.Controllers.CustomersController.AddMobilePlan(System.Int32)">
+            <summary>
+            Buying a Plan
+            </summary>
+            <param name="mobilePlanId">Mobile Plan</param>
+            <returns>Mobile Plan</returns>
+        </member>
+        <member name="T:MNS.Customer.Service.Startup">
+            <summary>
+            This class is an configures the respective pipelines for the services to run.
+            </summary>
+        </member>
+        <member name="M:MNS.Customer.Service.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup class for Microservices
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MNS.Customer.Service.Startup.Configuration">
+            <summary>
+            Configuration Property
+            </summary>
+        </member>
+        <member name="M:MNS.Customer.Service.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MNS.Customer.Service.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
